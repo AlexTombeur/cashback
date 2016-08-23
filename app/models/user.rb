@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :expenses
   has_many :messages
 
-  belongs_to :manager, class_name: "User"
-  belongs_to :corporation
+  belongs_to :manager, class_name: "User", optional: true
+  belongs_to :corporation, optional: true
 
 end
