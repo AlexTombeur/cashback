@@ -39,13 +39,18 @@
 <div class="container">
  <div class="row">
   <div class="col-xs-12 col-sm-8">
+
     <% if @user.expenses.empty? %>
         <h2><%= "You have no expense yet... Don't forget to book them !" %></h2>
     <% else %>
+  <table>
       <% @user.expenses.each do |expense| %>
-        <h3> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> - <%= expense.status %> </h3>
+      <tr>
+        <td><h3> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> - <%= expense.status %> </h3></td>
         <p><%= link_to "edit" , expense_path(expense) %></p>
+      </tr>
       <% end %>
+  </table>
     <% end %>
   </div>
  </div>
