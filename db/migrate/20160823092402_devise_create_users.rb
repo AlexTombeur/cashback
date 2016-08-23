@@ -35,8 +35,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.boolean :manager, null: false, default: false
       t.boolean :top_manager, null: false, default: false
       t.timestamps null: false
-      t.references :corporation
-      t.references :manager
     end
 
     add_index :users, :email,                unique: true
