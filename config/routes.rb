@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   # get 'messages/index'
 
   # get 'messages/new'
@@ -19,13 +19,12 @@ Rails.application.routes.draw do
   # get 'expenses/update'
 
   # get 'expenses/destroy'
-=======
+
   # get 'profiles/show'
 
   # get 'profiles/edit'
 
   # get 'profiles/update'
->>>>>>> 8a1b0c86da4fb174c2dff9370b04867d6053cbb5
 
   root to: 'pages#home'
   devise_for :users
