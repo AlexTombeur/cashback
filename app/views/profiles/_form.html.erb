@@ -1,0 +1,19 @@
+<%= simple_form_for(@user, url: profile_path) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li> Invalid input, please correct accordingly </li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- [...] all the fields -->
+  <%= f.text_field :first_name , placeholder: "first_name" %>
+  <%= f.text_field :last_name , placeholder: "last_name" %>
+  <%= f.text_field :email , placeholder: "email" %>
+  <%#= f.input :photo, as: :attachinary %>
+  <%#  :manager, :top_manager %>
+  <%= f.submit %>
+<% end %>
