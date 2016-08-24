@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
 
-  before_action :find_expense, only: [:show, :edit, :destroy, :approve, :reject]
+  before_action :find_expense, only: [:show, :edit, :destroy, :approve, :reject, :request]
 
   def index
     @expenses = current_user.expenses
@@ -51,7 +51,7 @@ class ExpensesController < ApplicationController
      redirect_to profile_path
   end
 
-  def request
+  def requested
      @expense.status = "Requested"
      @expense.save
      redirect_to new_expense_message_path(@expense)
