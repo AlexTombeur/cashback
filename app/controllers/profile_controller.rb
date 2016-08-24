@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+class ProfileController < ApplicationController
   before_action :find_user
 
   def show
@@ -20,6 +20,6 @@ private
     @user = current_user
   end
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name)
+    params.require(:user).permit(:email, :first_name, :last_name, :photo)
   end
 end

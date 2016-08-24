@@ -1,0 +1,25 @@
+
+  <div class="edit-box">
+    <%= simple_form_for(@corporation) do |f| %>
+        <% if @corporation.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+            <% @corporation.errors.full_messages.each do |message| %>
+              <li> Invalid input </li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+      <div class="form-inputs edit-form">
+        <%= f.input :name %>
+
+        <%= f.input :photo, as: :attachinary %>
+
+
+        <div class="form-actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    <% end %>
+  </div>

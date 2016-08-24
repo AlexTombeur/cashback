@@ -14,6 +14,10 @@
       </h2>
     </div>
 
+      <% if @user.photo? %>
+        <%= cl_image_tag @user.photo.path, width: 150, height: 150, crop: :fill %>
+      <% end %>
+
     <div class="info">
       <ul><li>
       <%= @user.first_name %>
