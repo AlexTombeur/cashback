@@ -11,9 +11,18 @@ class ExpensesController < ApplicationController
 
   def new
     @expense = Expense.new
+    respond_to do |format|
+      format.html {}
+      format.js {
+         @category = params[:category]
+         @sub_categories = set_sub_categories
+      }
+
+    end
   end
 
   def create
+    raise "kjgkjgkg"
     @expense = Expense.new(expense_params)
     @expense.user = current_user
       if @expense.save
@@ -67,4 +76,12 @@ class ExpensesController < ApplicationController
     params.require(:expense).permit(:amount, :date, :category, :sub_category, :status, :title, :description)
   end
 
+  def set_sub_categories
+    case @category
+      when "car" then ["fuel", "parking", "insurance", "repair", "maintenance", "cleaning"]
+      when "hotel" then ["night", "day"]
+      when "food" then ["lunch", "dinner"]
+      when "travel" then ["flight", "bus"]
+    end
+  end
 end

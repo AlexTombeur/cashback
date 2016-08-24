@@ -1,2 +1,26 @@
-<h1>Expenses#new</h1>
-<p>Find me in app/views/expenses/new.html.erb</p>
+<div class = "form-category">
+<div class="container">
+<%= link_to "----- car -----", new_expense_path(category: "car"), class: "btn btn-primary", remote: true %>
+<%= link_to "----- food -----", new_expense_path(category: "food"), class: "btn btn-primary", remote: true %>
+<%= link_to "----- hotel -----", new_expense_path(category: "hotel"), class: "btn btn-primary", remote: true %>
+<%= link_to "----- travel -----", new_expense_path(category: "travel"), class: "btn btn-primary", remote: true %>
+<%= link_to "----- phone -----", new_expense_path(category: "phone"), class: "btn btn-primary", remote: true %>
+<%= link_to "----- other -----", new_expense_path(category: "other"), class: "btn btn-primary", remote: true %>
+</div>
+</div>
+
+<div id = form>
+</div>
+
+<!-- expense cards -->
+<!-- <div class="wrapper-bottom">
+  <div class="row">
+  <%# link_to new_expense_path do %>
+    <div class="col-xs-12 col-md-6 col-lg-4 car-card">
+      <%#= cl_image_tag category.photo.fullpath, class: "card" %>
+    </div>
+  <%# end %>
+  </div>
+</div> -->
+
+<%# if category %>
