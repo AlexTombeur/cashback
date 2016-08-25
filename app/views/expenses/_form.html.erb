@@ -1,14 +1,14 @@
 <div class="container">
  <div class="row">
   <div class="col-xs-12 col-sm-8 col-sm-4">
+
     <%= simple_form_for(@expense) do |f| %>
       <%= f.hidden_field :category, value: @category %>
       <% if params[:action] == 'edit' %>
       <%= f.input :category, collection: %w(car travel food hotel other) %>
-
       <% end %>
 
-      <%= f.input :sub_category, collection: @sub_categories %>
+      <%= f.input :sub_category, collection: @sub_categories, as: :radio_buttons  %>
 
       <%= f.input :amount %>
       <%= f.input :date %>
