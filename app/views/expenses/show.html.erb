@@ -1,2 +1,19 @@
-<h1>Expenses#show</h1>
-<p>Find me in app/views/expenses/show.html.erb</p>
+<h1>Full description of the expense </h1>
+<br>
+  <table class= "table">
+   <ol>
+    <% if car.photo %>
+    <%= cl_image_tag car.photo.fullpath, class: "card" %>
+    <% end %>
+    <h2><%= @expense.amount %></h2>
+    <h2><%= @expense.date %></h2>
+    <h2><%= @expense.category %></h2>
+    <h2><%= @expense.sub_category %></h2>
+    <h2><%= @expense.status %></h2>
+    <h2><%= @expense.title %></h2>
+    <h2><%= @expense.description %></h2>
+   </ol>
+  </table>
+<br>
+<%= link_to "Back", profile_path %>
+<br>
