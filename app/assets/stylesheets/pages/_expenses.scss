@@ -1,10 +1,9 @@
 .big-button {
-    width: 100%;
-    text-align: center;
-    margin: 50px;
-    display: inline;
+  width: 100%;
+  text-align: center;
+  margin: 50px;
+  display: inline;
 }
-
 
 .expense_sub_category {
   label:not(.control-label) {
@@ -22,4 +21,13 @@
   input {
     visibility: hidden;
   }
+}
+
+.form-category {
+  width: 400px;
+  margin: 0 auto;
+}
+.edit-expense-form {
+  width: 400px;
+  margin: 0 auto;
 }

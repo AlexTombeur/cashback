@@ -1,14 +1,14 @@
-<div class="container">
- <div class="row">
-  <div class="col-xs-12 col-sm-8 col-sm-4">
+<div class="edit-expense-form">
 
     <%= simple_form_for(@expense) do |f| %>
       <%= f.hidden_field :category, value: @category %>
       <% if params[:action] == 'edit' %>
+      <h3>Please update your expense !</h3>
       <%= f.input :category, collection: %w(car travel food hotel other) %>
+      <%#= f.input :sub_category, collection: @sub_categories %>
       <% end %>
 
-      <%= f.input :sub_category, collection: @sub_categories, as: :radio_buttons  %>
+      <%= f.input :sub_category, collection: @sub_categories, as: :radio_buttons %>
 
       <%= f.input :amount %>
       <%= f.input :date %>
@@ -19,10 +19,8 @@
     <% end %>
 
     <%= link_to "Change category", new_expense_path %>
-  </div>
- </div>
-</div>
 
+</div>
 
 
 <!--   create_table "expenses", force: :cascade do |t|
