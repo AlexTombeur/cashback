@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
 
-  before_action :find_expense, only: [:show, :edit, :destroy, :approve, :reject, :request]
+  before_action :find_expense, only: [:show, :edit, :update, :destroy, :approve, :reject, :request]
 
   def index
     @expenses = current_user.expenses
@@ -22,7 +22,6 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    raise "kjgkjgkg"
     @expense = Expense.new(expense_params)
     @expense.user = current_user
       if @expense.save

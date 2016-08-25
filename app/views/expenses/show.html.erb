@@ -1,19 +1,31 @@
-<h1>Full description of the expense </h1>
+<div class="container">
+<h3>Full description of the expense </h3>
 <br>
   <table class= "table">
    <ol>
-    <% if car.photo %>
-    <%= cl_image_tag car.photo.fullpath, class: "card" %>
+    <% if @expense.amount %>
+    <p><%= @expense.amount %></p>
     <% end %>
-    <h2><%= @expense.amount %></h2>
-    <h2><%= @expense.date %></h2>
-    <h2><%= @expense.category %></h2>
-    <h2><%= @expense.sub_category %></h2>
-    <h2><%= @expense.status %></h2>
-    <h2><%= @expense.title %></h2>
-    <h2><%= @expense.description %></h2>
+    <% if @expense.date %>
+    <p><%= @expense.date %></p>
+    <% end %>
+    <% if @expense.category %>
+    <p><%= @expense.category %></p>
+    <% end %>
+    <% if @expense.sub_category %>
+    <p><%= @expense.sub_category %></p>
+    <% end %>
+    <% if @expense.status %>
+    <p><%= @expense.status %></p>
+    <% end %>
+    <% if @expense.title %>
+    <p><%= @expense.title %></p>
+    <% end %>
+    <% if @expense.description %>
+    <% end %>
    </ol>
   </table>
 <br>
 <%= link_to "Back", profile_path %>
 <br>
+</div>
