@@ -1,2 +1,78 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home text-center">
+
+  <!-- Title + Main titles -->
+    <div class="wrapper-top">
+
+      <div class="homepage-hero-module">
+        <div class="video-container">
+            <div class="text-center">
+              <h1 id="title" class="white-el">CashBack</h1>
+              <h3>Expense tracking made easy </h3>
+            </div>
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth">
+                <source src="<%= video_path 'Coverr-Lulu.mp4' %>" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                <source src="<%= video_path 'Coverr_Lulu.webm' %>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            </video>
+            <div class="poster hidden">
+                <%= image_tag 'Coverr_Lulu.jpg' %>
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Value proposition statement -->
+  <div class="value-proposition">
+    <p>CashBack is an automated service reporting employees' expenses to their corporation</p>
+  </div>
+
+  <!-- Explanation / Workflow -->
+
+  <h3>Who it works</h3>
+  <div class="workflow">
+
+    <div>
+      <img class="" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/bank_cards.png" alt="Registration" width="120" height="120"><p></p>
+      <h6 class="description">Instantaneous expense registration upon payment</h6>
+    </div>
+
+    <div>
+      <img class="" src="http://i0.wp.com/sflanders.net/wp-content/uploads/2014/12/categories-icon.png" alt="Categorisation" width="120" height="120"><p></p>
+      <h6 class="categorisation">Expense categorisation by employee</h6>
+    </div>
+
+    <div>
+      <img class="" src="http://haztab.com/wp-content/uploads/2014/04/Very-Basic-Checked-checkbox-icon-150x150.png" alt="Validation" width="120" height="120"><p></p>
+      <h6 class="description">Smooth validation process by manager</h6>
+    </div>
+  </div>
+
+  <!-- Advantages -->
+  <h3>Core benefits</h3>
+  <div class="advantages">
+
+    <div>
+      <img class="" src="https://d30y9cdsu7xlg0.cloudfront.net/png/122433-200.png" alt="Employee satisfaction" width="120" height="120"><p></p>
+      <h6 class="benefit">Improved employee satisfaction</h6>
+    </div>
+
+    <div>
+      <img class="" src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/12.File-128.png" alt="Administrative burden" width="120" height="120"><p></p>
+      <h6 class="benefit">Reduced administrative burden</h6>
+    </div>
+
+    <div>
+      <img class="" src="http://icons.iconarchive.com/icons/icons8/ios7/512/Time-And-Date-Clock-icon.png" alt="Time and cost savings" width="120" height="120"><p></p>
+      <h6 class="benefit">Time and cost savings</h6>
+    </div>
+  </div>
+
+  <!-- Call to action -->
+    <div class="punchline">
+      <h4>Shape the future of expense tracking with CashBack</h4>
+    </div>
+    <div class="call-to-action">
+      <%= link_to "Get Started Now !", new_user_registration_path, class:"btn btn-success" %>
+    </div>
+
+</div>
