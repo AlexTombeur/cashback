@@ -1,7 +1,5 @@
 // Your footer style
 #footer {
-  position:absolute;
-  bottom: 0;
   width: 100%;
   background: #333333;
   padding: 20px 0;
@@ -22,4 +20,8 @@
 }
 #footer a:hover{
   color: white;
+}
+
+.credit{
+  font-size: 18px;
 }

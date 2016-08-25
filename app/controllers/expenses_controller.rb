@@ -22,7 +22,6 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    raise "kjgkjgkg"
     @expense = Expense.new(expense_params)
     @expense.user = current_user
       if @expense.save

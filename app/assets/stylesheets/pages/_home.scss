@@ -2,3 +2,132 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.home {
+  font-family: Open-sans, sans-serif;
+}
+
+#title{
+  margin:0;
+  padding-top:80px;
+  padding-bottom: 20px;
+  font-weight:bold;
+  font-family:$header-font;
+  letter-spacing: 1px;
+  font-size: 48px;
+}
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
+
+.navbar-wagon-fixed {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+}
+
+.white-el{
+  color: $gray-lighter;
+}
+
+.wrapper-top {
+  margin: auto;
+  height: 100vh;
+  width:100%;
+  background-size:cover;
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.15) 0%, rgba(0,36,61,0.3) 50%);
+
+}
+
+.value-proposition{
+ font-size: 24px;
+ padding: 60px;
+}
+
+.workflow{
+  display: flex;
+  justify-content: center;
+  align: center;
+  justify-content: space-around;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.advantages{
+  display: flex;
+  justify-content: center;
+  align: center;
+  justify-content: space-around;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.description{
+  max-width: 190px;
+  padding-top: 14px;
+}
+
+.categorisation{
+  max-width: 171px;
+  padding-top: 14px;
+}
+
+.benefit{
+  max-width: 230px;
+}
+
+.punchline{
+  padding-top:40px;
+}
+
+.call-to-action{
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.btn{
+  padding: 15px;
+  font-size: 16px;
+}
+
