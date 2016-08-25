@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
 
-  before_action :find_expense, only: [:show, :edit, :destroy, :approve, :reject, :request]
+  before_action :find_expense, only: [:show, :edit, :update, :destroy, :approve, :reject, :request]
 
   def index
     @expenses = current_user.expenses
@@ -14,60 +14,62 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       format.html {}
       format.js {
-         @category = params[:category]
-         @sub_categories = set_sub_categories
-      }
+       @category = params[:category]
+       @sub_categories = set_sub_categories
+     }
 
-    end
+   end
+ end
+
+ def create
+  @expense = Expense.new(expense_params)
+  @expense.user = current_user
+  if @expense.save
+    redirect_to expense_path(@expense)
+  else
+    render :new
   end
+end
 
-  def create
-    @expense = Expense.new(expense_params)
-    @expense.user = current_user
-      if @expense.save
-        redirect_to expense_path(@expense)
-      else
-        render :new
-      end
-  end
+def edit
+  @category = @expense.category
+  @sub_categories = set_sub_categories
+end
 
-  def edit
-  end
-
-  def update
-      if @expense.update(expense_params)
-        redirect_to profile_path
-      else
-        render :edit
-      end
-  end
-
-  def destroy
-    @expense.destroy
+def update
+  if @expense.update(expense_params)
     redirect_to profile_path
+  else
+    render :edit
   end
+end
 
-  def approve
+def destroy
+  @expense.destroy
+  redirect_to profile_path
+end
+
+def approve
      @expense.status = "Accepted"            # as soon as the owner approves a booking, the status changes to Accepted"
      @expense.save
      redirect_to profile_path
-  end
+   end
 
-  def reject
+   def reject
      @expense.status = "Rejected"           # as soon as the owner approves a booking, the status changes to Rejected"
      @expense.save
      redirect_to profile_path
-  end
+   end
 
-  def requested
+   def requested
      @expense.status = "Requested"
      @expense.save
      redirect_to new_expense_message_path(@expense)
-  end
+   end
 
-  private
+   private
 
-  def find_expense
+   def find_expense
     @expense = Expense.find(params[:id])
   end
 
@@ -77,10 +79,10 @@ class ExpensesController < ApplicationController
 
   def set_sub_categories
     case @category
-      when "car" then ["fuel", "parking", "insurance", "repair", "maintenance", "cleaning"]
-      when "hotel" then ["night", "day"]
-      when "food" then ["lunch", "dinner"]
-      when "travel" then ["flight", "bus"]
+    when "car" then ["fuel", "parking", "insurance", "repair", "maintenance", "cleaning"]
+    when "hotel" then ["night", "day"]
+    when "food" then ["lunch", "dinner"]
+    when "travel" then ["flight", "bus"]
     end
   end
 end

@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 20160824120759) do
     t.date     "date"
     t.string   "category"
     t.string   "sub_category"
-    t.string   "status",       default: "Pending"
+    t.string   "status"
     t.string   "title"
     t.string   "description"
     t.integer  "user_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_expenses_on_user_id", using: :btree
   end
 

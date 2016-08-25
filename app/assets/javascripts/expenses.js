@@ -1,2 +1,4 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$('#form').on("click", ".expense_sub_category input[type='radio']", function(){
+  $('.expense_sub_category label').removeClass('selected');
+  $(this).parents('label:first').addClass('selected');
+});

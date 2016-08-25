@@ -1,0 +1,33 @@
+.big-button {
+  width: 100%;
+  text-align: center;
+  margin: 50px;
+  display: inline;
+}
+
+.expense_sub_category {
+  label:not(.control-label) {
+    width: 100%;
+    height: 2em;
+    background-color: #2183A3;
+    text-align: center;
+    border-radius: 4px;
+
+    &.selected {
+      background-color: #21708A;
+    }
+  }
+
+  input {
+    visibility: hidden;
+  }
+}
+
+.form-category {
+  width: 400px;
+  margin: 0 auto;
+}
+.edit-expense-form {
+  width: 400px;
+  margin: 0 auto;
+}

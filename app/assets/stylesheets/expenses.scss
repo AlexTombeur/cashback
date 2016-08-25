@@ -1,18 +1,16 @@
-// Place all the styles related to the expenses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
+.expense_sub_category {
+  label {
+    width: 100%;
+    height: 1em;
+    background-color: red;
+  }
 
-.card {
-  position: relative;
-  height: 200px;
-  width: 350px;
-  border-radius: 9px;
-  color: white;
-  margin: 0 auto;
-  background-size: cover;
-  flex: 0 1 auto;
+  input {
+    visibility: hidden;
+  }
 
-.form-wrapper {
-  display: none;
+  label:has(input[type="radio"]:checked) {
+    background-color: green;
+  }
 }

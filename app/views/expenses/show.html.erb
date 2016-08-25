@@ -1,2 +1,31 @@
-<h1>Expenses#show</h1>
-<p>Find me in app/views/expenses/show.html.erb</p>
+<div class="container">
+<h3>Full description of the expense </h3>
+<br>
+  <table class= "table">
+   <ol>
+    <% if @expense.amount %>
+    <p><%= @expense.amount %></p>
+    <% end %>
+    <% if @expense.date %>
+    <p><%= @expense.date %></p>
+    <% end %>
+    <% if @expense.category %>
+    <p><%= @expense.category %></p>
+    <% end %>
+    <% if @expense.sub_category %>
+    <p><%= @expense.sub_category %></p>
+    <% end %>
+    <% if @expense.status %>
+    <p><%= @expense.status %></p>
+    <% end %>
+    <% if @expense.title %>
+    <p><%= @expense.title %></p>
+    <% end %>
+    <% if @expense.description %>
+    <% end %>
+   </ol>
+  </table>
+<br>
+<%= link_to "Back", profile_path %>
+<br>
+</div>
