@@ -1,13 +1,17 @@
 /* Main class */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: transparent;
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
 }
 
 /* Optional class to fix the navbar on top */
@@ -44,7 +48,6 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
   text-decoration: none;
 }
 
@@ -128,4 +131,18 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbtn{
+  padding: 12px;
+  color: white;
+  margin: 10px;
+  border-radius: 7px;
+  width: 87px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.btn{
+  border-radius: 7px;
 }
