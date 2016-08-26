@@ -53,7 +53,7 @@
         <% @user.expenses.each do |expense| %>
         <card class="list_expenses">
         <tr>
-          <td><p> <%= link_to edit_expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
+          <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
            </p></td>
            <%#= link_to "edit" , edit_expense_path(expense) %>
         </tr>

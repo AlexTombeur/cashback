@@ -1,37 +1,19 @@
 Rails.application.routes.draw do
+  namespace :subordinates do
+    get 'expenses/index'
+  end
 
-  # get 'corporations/new'
+  namespace :subordinates do
+    get 'expenses/show'
+  end
 
-  # get 'corporations/edit'
+  # get 'subordinates/index'
 
-  # get 'messages/index'
-
-  # get 'messages/new'
-
-  # get 'messages/create'
-
-  # get 'expenses/index'
-
-  # get 'expenses/new'
-
-  # get 'expenses/show'
-
-  # get 'expenses/create'
-
-  # get 'expenses/edit'
-
-  # get 'expenses/update'
-
-  # get 'expenses/destroy'
-
-  # get 'profiles/show'
-
-  # get 'profiles/edit'
-
-  # get 'profiles/update'
+  # get 'subordinates/show'
 
   root to: 'pages#home'
-  devise_for :users
+
+  devise_for :users, :controllers => { :invitations => 'users/invitations' }
 
   resources :corporations, only: [:new, :edit, :create, :update]
 
@@ -39,6 +21,17 @@ Rails.application.routes.draw do
 
   resources :expenses do
     resources :messages, only: [:index, :new, :create]
+  end
+
+  namespace :subordinates do
+    resources :expenses, only: [:index, :show] do
+      member do
+        patch :accept
+        patch :reject
+      end
+
+      resources :messages, only: [:create]
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

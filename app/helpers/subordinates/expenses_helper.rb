@@ -1,0 +1,2 @@
+module Subordinates::ExpensesHelper
+end
