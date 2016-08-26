@@ -1,68 +1,70 @@
-<div class="container">
-<div class="banner">
+<div class="yield-box">
+  <div class="container">
+  <div class="banner">
 
-  <div class="image">
-    <%# if @user.photo? %>
-    <%#= cl_image_tag @user.photo.path, width: 250, height: 250, crop: :fill, class: "profile-pic" %>
-    <%# end %>
-  </div>
-
-  <div class="content">
-    <div class="title">
-      <h2>
-        Hey <%= @user.first_name %> !
-      </h2>
+    <div class="image">
+      <%# if @user.photo? %>
+      <%#= cl_image_tag @user.photo.path, width: 250, height: 250, crop: :fill, class: "profile-pic" %>
+      <%# end %>
     </div>
 
-      <% if @user.photo? %>
-        <%= cl_image_tag @user.photo.path, width: 150, height: 150, crop: :fill %>
-      <% end %>
+    <div class="content">
+      <div class="title">
+        <h2>
+          Hey <%= @user.first_name %> !
+        </h2>
+      </div>
 
-    <div class="info">
-      <ul><li>
-      <%= @user.first_name %>
-      <%= @user.last_name %>
-      <%= @user.email %>
-      <% if @user.manager %>
-        Reference manager: <%= @user.manager.first_name %> <%= @user.manager.last_name %>
-      <% end %>
-      <% if @user.top_manager? %>
-          You are a top manager
-      <% elsif @user.is_manager? %>
-        You are manager
-      <% end %>
-      <%= link_to 'Edit profile', edit_profile_path, class: "edit" %>
-      </li></ul>
+        <% if @user.photo? %>
+          <%= cl_image_tag @user.photo.path, width: 150, height: 150, crop: :fill %>
+        <% end %>
+
+      <div class="info">
+        <ul><li>
+        <%= @user.first_name %>
+        <%= @user.last_name %>
+        <%= @user.email %>
+        <% if @user.manager %>
+          Reference manager: <%= @user.manager.first_name %> <%= @user.manager.last_name %>
+        <% end %>
+        <% if @user.top_manager? %>
+            You are a top manager
+        <% elsif @user.is_manager? %>
+          You are manager
+        <% end %>
+        <%= link_to 'Edit profile', edit_profile_path, class: "edit" %>
+        </li></ul>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="new_expense">
-  <%= link_to '+', new_expense_path, class: "create_expense btn-success"%>
-</div>
-
- <div class="row">
-  <div class="col-xs-12 col-sm-8">
-
-    <% if @user.expenses.empty? %>
-        <h3><%= "You have no expense yet... Don't forget to book them !" %></h3>
-    <% else %>
-  <table>
-      <% @user.expenses.each do |expense| %>
-      <card class="list_expenses">
-      <tr>
-        <td><p> <%= link_to edit_expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
-         </p></td>
-         <%#= link_to "edit" , edit_expense_path(expense) %>
-      </tr>
-      </card>
-      <% end %>
-  </table>
-    <% end %>
+  <div class="new_expense">
+    <%= link_to '+', new_expense_path, class: "create_expense btn-success"%>
   </div>
- </div>
+
+   <div class="row">
+    <div class="col-xs-12 col-sm-8">
+
+      <% if @user.expenses.empty? %>
+          <h3><%= "You have no expense yet... Don't forget to book them !" %></h3>
+      <% else %>
+    <table>
+        <% @user.expenses.each do |expense| %>
+        <card class="list_expenses">
+        <tr>
+          <td><p> <%= link_to edit_expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
+           </p></td>
+           <%#= link_to "edit" , edit_expense_path(expense) %>
+        </tr>
+        </card>
+        <% end %>
+    </table>
+      <% end %>
+    </div>
+   </div>
+  </div>
+
+
+
+  <div class="sidebar"></div>
 </div>
-
-
-
-<div class="sidebar"></div>
