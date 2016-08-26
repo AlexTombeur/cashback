@@ -14,11 +14,11 @@
           Hey <%= @user.first_name %> !
         </h2>
       </div>
-
+      <div class="avatar">
         <% if @user.photo? %>
           <%= cl_image_tag @user.photo.path, width: 150, height: 150, crop: :fill %>
         <% end %>
-
+      </div>
       <div class="info">
         <ul><li>
         <%= @user.first_name %>
