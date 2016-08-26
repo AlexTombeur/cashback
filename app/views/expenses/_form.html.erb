@@ -2,9 +2,13 @@
 
     <%= simple_form_for(@expense) do |f| %>
       <%= f.hidden_field :category, value: @category %>
+      <%= f.hidden_field :status %>
       <% if params[:action] == 'edit' %>
       <h3>Please update your expense !</h3>
-      <%= f.input :category, collection: %w(car travel food hotel other) %>
+      <div  class="category-edit" >
+      <%= @expense.category %>
+      </div>
+      <%#= f.input :category, collection: %w(car travel food hotel other) %>
       <%#= f.input :sub_category, collection: @sub_categories %>
       <% end %>
 
@@ -18,7 +22,7 @@
       <%= f.submit %>
     <% end %>
 
-    <%= link_to "Change category", new_expense_path %>
+    <%= link_to "Back", profile_path %>
 
 </div>
 

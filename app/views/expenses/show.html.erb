@@ -3,29 +3,33 @@
 <br>
   <table class= "table">
    <ol>
-    <% if @expense.amount %>
-    <p><%= @expense.amount %></p>
-    <% end %>
-    <% if @expense.date %>
+      <h4>Category</h4>
+      <div  class="category-edit" >
+      <%= @expense.category %>
+      </div>
+
+      <h4>Sub category</h4>
+      <div  class="sub-category-show" >
+      <%= @expense.sub_category %>
+      </div>
+
+    <p><%= @expense.amount %> €</p>
+
     <p><%= @expense.date %></p>
-    <% end %>
-    <% if @expense.category %>
-    <p><%= @expense.category %></p>
-    <% end %>
-    <% if @expense.sub_category %>
-    <p><%= @expense.sub_category %></p>
-    <% end %>
-    <% if @expense.status %>
-    <p><%= @expense.status %></p>
-    <% end %>
+
+    <p>Satus: <%= @expense.status %></p>
+
     <% if @expense.title %>
     <p><%= @expense.title %></p>
     <% end %>
     <% if @expense.description %>
+    <p>Description: <%= @expense.description %></p>
     <% end %>
+
    </ol>
   </table>
 <br>
-<%= link_to "Back", profile_path %>
+<%= link_to "Edit", edit_expense_path %>
 <br>
+<%= link_to "Back", profile_path %>
 </div>
