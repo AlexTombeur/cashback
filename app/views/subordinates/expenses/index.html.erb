@@ -1,5 +1,23 @@
 <div class="yield-box">
 
-<h1>Subordinates::Expenses#index</h1>
-<p>Find me in app/views/subordinates/expenses/index.html.erb</p>
+<h1>List of employee's expenses</h1>
+
+   <div class="row">
+    <div class="col-xs-12 col-sm-8">
+
+    <table>
+        <% @expenses.each do |expense| %>
+        <card class="list_expenses">
+        <tr>
+          <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
+           </p></td>
+           <%#= link_to "edit" , edit_expense_path(expense) %>
+        </tr>
+        </card>
+        <% end %>
+    </table>
+
+    </div>
+   </div>
+
 </div>

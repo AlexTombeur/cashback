@@ -15,31 +15,36 @@
         </h2>
       </div>
 
+        <div class profile-foto >
         <% if @user.photo? %>
           <%= cl_image_tag @user.photo.path, width: 150, height: 150, crop: :fill %>
         <% end %>
+        </div >
 
       <div class="info">
-        <ul><li>
+        <ul>
         <%= @user.first_name %>
         <%= @user.last_name %>
         <%= @user.email %>
         <% if @user.manager %>
           Reference manager: <%= @user.manager.first_name %> <%= @user.manager.last_name %>
         <% end %>
+        <%= link_to 'Edit profile', edit_profile_path, class: "edit" %>
+        <br>
         <% if @user.top_manager? %>
             You are a top manager
         <% elsif @user.is_manager? %>
           You are manager
         <% end %>
-        <%= link_to 'Edit profile', edit_profile_path, class: "edit" %>
-        </li></ul>
+
+        </ul>
       </div>
     </div>
   </div>
 
   <div class="new_expense">
-    <%= link_to '+', new_expense_path, class: "create_expense btn-success"%>
+  <%#= button_to "New expense", new_expense_path, class: "create_expense btn-success"%>
+    <%= link_to 'Add expense', new_expense_path, class: "create_expense btn-success"%>
   </div>
 
    <div class="row">
