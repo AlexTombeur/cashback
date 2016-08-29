@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  namespace :subordinates do
-    get 'expenses/index'
-  end
-
-  namespace :subordinates do
-    get 'expenses/show'
-  end
 
   # get 'subordinates/index'
 
