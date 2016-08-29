@@ -1,4 +1,4 @@
-<div class="yield-box">
+<div class="yield-box container">
 
 <h1>List of employee's expenses</h1>
 
@@ -13,7 +13,8 @@
            </p></td>
            <td> <%= link_to "Validate", accept_subordinates_expense_path(expense), method: :patch %> </td>
            <td> <%= link_to "Reject", reject_subordinates_expense_path(expense), method: :patch %> </td>
-           <td> <%= link_to "Info request", subordinates_expense_messages_path(expense), method: :post %> </td>
+           <td> <%#= link_to "Info request", subordinates_expense_messages_path(expense) %> </td>
+
            <%#= link_to "edit" , edit_expense_path(expense) %>
         </tr>
         </card>
