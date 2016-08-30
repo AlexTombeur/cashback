@@ -33,7 +33,6 @@
    <div class="row">
     <div class="col-xs-12 col-sm-6">
 
-
       <% if @user.expenses.empty? %>
           <h3><%= "You have no expense yet... Don't forget to book them !" %></h3>
       <% else %>
@@ -46,17 +45,17 @@
                 <%= expense.status %>
               </span>
               <h5><%= expense.date %></h5>
+
               <div class="row">
                 <div class="col-xs-7">
                   <%= expense.category %>
-
                 </div>
                 <div class="col-xs-5 text-right">
-                  <h2><%= expense.amount %> €</h2>
-
+                  <h4><%= expense.amount %> €</h4>
                 </div>
               </div>
             </div>
+
           <% end %>
         <% end %>
 

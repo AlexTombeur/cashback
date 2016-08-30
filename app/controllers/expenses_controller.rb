@@ -50,19 +50,19 @@ def destroy
 end
 
 def approve
-     @expense.status = "Accepted"            # as soon as the owner approves a booking, the status changes to Accepted"
+     @expense.status = "valid"            # as soon as the owner approves a booking, the status changes to Accepted"
      @expense.save
      redirect_to profile_path
    end
 
    def reject
-     @expense.status = "Rejected"           # as soon as the owner approves a booking, the status changes to Rejected"
+     @expense.status = "rejected"           # as soon as the owner approves a booking, the status changes to Rejected"
      @expense.save
      redirect_to profile_path
    end
 
    def requested
-     @expense.status = "Requested"
+     @expense.status = "info"
      @expense.save
      redirect_to new_expense_message_path(@expense)
    end

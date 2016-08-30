@@ -1,5 +1,5 @@
-<!-- <div class="container">
- -->  <div class="edit-expense-form">
+<div class="container">
+  <div class="edit-expense-form">
 
       <%= simple_form_for(@expense) do |f| %>
         <%= f.hidden_field :category, value: @category %>
@@ -24,7 +24,7 @@
       <%= link_to "Back", profile_path %>
 
   </div>
-<!-- </div> -->
+</div>
 
 <!--   create_table "expenses", force: :cascade do |t|
     t.integer  "amount"
