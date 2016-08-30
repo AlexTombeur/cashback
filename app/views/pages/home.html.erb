@@ -7,14 +7,14 @@
       <div class="video-container">
         <div class="body-text text-center">
           <h1 id="title" class="white-el">CashBack</h1>
-          <h3>Expense tracking made easy </h3>
+          <h4>Expense tracking made <span>easy</span></h4>
         </div>
         <video autoplay loop class="fillWidth">
-          <source src="<%= video_path 'Coverr-Lulu.mp4' %>" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="<%= video_path 'Coverr_Lulu.webm' %>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="<%= video_path 'Love-iOS.mp4' %>" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="<%= video_path 'Love-iOS.webm' %>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
             </video>
             <div class="poster hidden">
-              <%= image_tag 'Coverr_Lulu.jpg' %>
+              <%= image_tag 'Love-iOS.jpg' %>
             </div>
           </div>
         </div>
@@ -22,15 +22,17 @@
 
       <!-- Value proposition statement -->
       <div class="value-proposition">
-        <p>CashBack is an automated service reporting employees' expenses to their corporation</p>
+        <p><span>CashBack</span> is an automated service reporting employees' expenses to their corporation</p>
       </div>
 
       <!-- Explanation / Workflow -->
       <div class="container">
         <div class="workflow">
           <div class="row">
-            <h3>How it works</h3>
 
+            <div class="working-process">
+            <h3>How it works</h3>
+            </div>
 
             <div class="col-xs-12 col-lg-4">
               <img class="image" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/bank_cards.png" alt="Registration" width="48" height="48"><p></p>
@@ -54,7 +56,9 @@
       <div class="container border-style">
         <div class="advantages">
           <div class="row">
+            <div class="working-process">
             <h3>Core benefits</h3>
+            </div>
 
             <div class="col-xs-12 col-lg-4">
               <img class="image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/122433-200.png" alt="Employee satisfaction" width="48" height="48"><p></p>
@@ -76,7 +80,7 @@
 
       <!-- Call to action -->
       <div class="punchline">
-        <h4>Shape the future of expense tracking with CashBack</h4>
+        <p>Shape the future of expense tracking with CashBack</p>
       </div>
       <div class="call-to-action">
         <%= link_to "Get Started Now !", new_user_registration_path, class:"btn btn-success" %>
