@@ -9,8 +9,8 @@
         <card class="list_expenses">
         <tr>
           <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.user.email %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
-            <%= link_to "Validate", accept_subordinates_expense_path(expense), method: :patch %>
-            <%= link_to "Reject", reject_subordinates_expense_path(expense), method: :patch %>
+            <%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch %>
+            <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch %>
             </p></td>
 
            <%#= link_to "edit" , edit_expense_path(expense) %>

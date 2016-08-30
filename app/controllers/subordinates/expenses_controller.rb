@@ -12,21 +12,21 @@ class Subordinates::ExpensesController < ApplicationController
 
   def accept
     @expense = Expense.find(params[:id])
-    @expense.status = "Valid"
+    @expense.status = "valid"
     @expense.save!
     redirect_to subordinates_expenses_path
   end
 
   def reject
     @expense = Expense.find(params[:id])
-    @expense.status = "Rejected"
+    @expense.status = "rejected"
     @expense.save!
     redirect_to subordinates_expenses_path
   end
 
   def requeste
     @expense = Expense.find(params[:id])
-    @expense.status = "Info requested"
+    @expense.status = "info"
     @expense.save!
     redirect_to subordinates_expenses_path
   end

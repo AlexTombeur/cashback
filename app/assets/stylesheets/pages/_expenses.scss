@@ -1,5 +1,6 @@
 .new_expense {
-
+  width: 100%;
+  max-width: 400px;
 }
 
 .expense_sub_category {
@@ -21,11 +22,13 @@
 }
 
 .form-category {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 .form-category-icon {
   display: block;
+  text-align: center;
 }
 
 .edit-expense-form {
