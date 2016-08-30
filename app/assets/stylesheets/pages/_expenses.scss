@@ -1,3 +1,6 @@
+.new_expense {
+
+}
 
 .expense_sub_category {
   label:not(.control-label) {
@@ -26,7 +29,8 @@
 }
 
 .edit-expense-form {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -54,4 +58,16 @@
 
 .radio label{
   padding-left: 0px !important;
+}
+
+
+// CHANGE COLORS HERE FOR HOVER
+.expense-show a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+
+.expense-show a{
+  color: $gray-dark;
 }

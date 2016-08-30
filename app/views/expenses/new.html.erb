@@ -1,6 +1,6 @@
 <div class="container">
   <div class="yield-box">
-    <div class=" text-center">
+  -<div class = "form-category">
       <div class="row">
         <div class="col-xs-6">
           <%= link_to  new_expense_path(category: "car"), remote: true, class: 'form-category-icon' do %>
@@ -31,25 +31,10 @@
           <%= link_to new_expense_path(category: "other"), remote: true, class: 'form-category-icon' do %>
             <i class="fa fa-search fa-5x cat-icon"></i>
           <% end %>
-
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id = form>
-  </div>
+  <div id = form> </div>
 </div>
-
-<!-- expense cards -->
-<!-- <div class="wrapper-bottom">
-  <div class="row">
-  <%# link_to new_expense_path do %>
-    <div class="col-xs-12 col-md-6 col-lg-4 car-card">
-      <%#= cl_image_tag category.photo.fullpath, class: "card" %>
-    </div>
-  <%# end %>
-  </div>
-</div> -->
-
-<%# if category %>
