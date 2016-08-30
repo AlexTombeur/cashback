@@ -78,16 +78,17 @@ def approve
   end
 
   def set_sub_categories
-    if @category == "other"
-      @sub_category = nil
-    else
+    # if @category == "other"
+    #   @sub_category = nil
+    # else
       case @category
       when "car" then ["fuel", "parking", "insurance", "repair", "maintenance", "cleaning"]
       when "hotel" then ["night", "day", "quicky"]
       when "food" then ["breakfeast", "lunch", "dinner"]
       when "travel" then ["flight", "bus", "metro", "other"]
       when "phone" then ["local call", "international call"]
+      when "other" then [""]
       end
-    end
+    # end
   end
 end
