@@ -1,0 +1,17 @@
+.label {
+
+  &.label-pending {
+    @extend .label-default;
+  }
+  &.label-valid {
+    @extend .label-success;
+  }
+  &.label-info {
+    @extend .label-info;
+  }
+  &.label-rejected,
+  &.label-Rejected {
+    @extend .label-warning;
+  }
+
+}

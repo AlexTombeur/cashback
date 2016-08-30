@@ -3,12 +3,31 @@
  * (see http://getbootstrap.com/customize/#less-variables)
  * ------------------------------------- */
 
-// General style
+// General
+// Google fonts
+$base-font: 'Montserrat', sans-serif;
+$header-font: 'Oswald', sans-serif;
+
 $font-family-sans-serif:  $base-font;
-$body-bg:                 white;
+$font-family-base:  $base-font;
+$headings-font-family: $header-font;
+
+$body-bg:                 #EDEAE8;
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
 $headings-font-family:    $header-font;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 5px;
+}
 
 // Semantic color scheme
 $brand-primary:   $blue;
