@@ -1,8 +1,9 @@
 <div class="yield-box">
 <div class="container">
 <h3>Full description of the expense </h3>
-<br>
-  <table class= "table expense-show">
+
+<%= link_to edit_expense_path do %>
+  <div class= " well table expense-show">
    <ol>
       <h4>Category</h4>
       <div  class="category-edit" >
@@ -28,10 +29,11 @@
     <% end %>
 
    </ol>
-  </table>
-<br>
-<%= link_to "Edit", edit_expense_path %>
-<br>
+  </div>
+<% end %>
+
+<%#= link_to "Edit", edit_expense_path %>
+
 <%= link_to "Back", profile_path %>
 </div>
 </div>

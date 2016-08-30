@@ -39,13 +39,11 @@
       <% else %>
 
         <% @user.expenses.each do |expense| %>
-        <div class="well well-sm expense-split">
-        <tr>
-          <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
-           </p></td>
-           <%#= link_to "edit" , edit_expense_path(expense) %>
-        </tr>
-        </div>
+          <%= link_to expense_path(expense) do %>
+            <div class="well well-sm expense-split">
+              <td><p> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %>
+            </div>
+          <% end %>
         <% end %>
 
       <% end %>
