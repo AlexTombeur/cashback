@@ -7,6 +7,7 @@
   font-family: Open-sans, sans-serif;
 }
 
+
 .body-text {
   margin-top: 100px;
 }
@@ -85,16 +86,23 @@
 }
 
 .value-proposition{
- font-size: 24px;
- padding: 60px;
+ font-size: 16px;
+ padding-top: 60px;
+ padding-right: 60px;
+ padding-left: 60px;
+ padding-bottom: 35px;
+ width: 100%;
+ text-align: left;
+ background: #f7f9fb;
+ border-bottom: 1px solid rgba(1,1,1,0.1);
 }
+
 
 .workflow{
   display: flex;
   justify-content: center;
   align: center;
   justify-content: space-around;
-  padding-top: 35px;
   padding-bottom: 35px;
 }
 
@@ -108,20 +116,33 @@
 }
 
 .description{
-  max-width: 190px;
+  max-width: 100px;
   padding-top: 14px;
+  font-size: 13px;
+  margin: 20px auto;
 }
 
 .categorisation{
-  max-width: 171px;
+  max-width: 100px;
   padding-top: 14px;
+  font-size: 13px;
+  margin: 20px auto;
 }
 
 .benefit{
-  max-width: 230px;
+  max-width: 100px;
   margin-top: 24px;
   margin-bottom: 11px;
+  font-size: 13px;
+  margin: 20px auto;
 }
+
+.border-style {
+    background: #f7f9fb;
+    border-top: 1px solid rgba(1,1,1,0.1);
+    border-bottom: 1px solid rgba(1,1,1,0.1);
+}
+
 
 .punchline{
   padding-top:40px;
