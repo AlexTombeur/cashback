@@ -4,7 +4,6 @@ class Subordinates::ExpensesController < ApplicationController
         current_user.subordinates.each do |subordinate|
           @expenses << subordinate.expenses
           end
-
         @expenses.flatten!
   end
 
@@ -33,4 +32,3 @@ class Subordinates::ExpensesController < ApplicationController
   end
 
 end
-
