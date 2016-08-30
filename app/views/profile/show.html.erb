@@ -42,34 +42,34 @@
     </div>
   </div>
 
-  <div class="new_expense">
-  <%#= button_to "New expense", new_expense_path, class: "create_expense btn-success"%>
-    <%= link_to 'Add expense', new_expense_path, class: "create_expense btn-success"%>
-  </div>
-
    <div class="row">
-    <div class="col-xs-12 col-sm-8">
+    <div class="col-xs-12 col-sm-6">
 
 
       <% if @user.expenses.empty? %>
           <h3><%= "You have no expense yet... Don't forget to book them !" %></h3>
       <% else %>
-    <table>
+
         <% @user.expenses.each do |expense| %>
-        <card class="list_expenses">
+        <div class="well well-sm">
         <tr>
           <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
            </p></td>
            <%#= link_to "edit" , edit_expense_path(expense) %>
         </tr>
-        </card>
+        </div>
         <% end %>
-    </table>
+
       <% end %>
     </div>
    </div>
   </div>
 
+
+
+  <div class="action-sheet">
+    <%= link_to 'Add expense', new_expense_path, class: "btn btn-success"%>
+  </div>
 
 
   <div class="sidebar"></div>

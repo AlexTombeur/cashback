@@ -1,4 +1,4 @@
-<div class="yield-box">
+<div class="yield-box container">
 
 <h1>List of employee's expenses</h1>
 
@@ -9,8 +9,12 @@
         <% @expenses.each do |expense| %>
         <card class="list_expenses">
         <tr>
-          <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
+          <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%#= @subordinate.email %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
            </p></td>
+           <td> <%= link_to "Validate", accept_subordinates_expense_path(expense), method: :patch %> </td>
+           <td> <%= link_to "Reject", reject_subordinates_expense_path(expense), method: :patch %> </td>
+           <td> <%#= link_to "Info request", subordinates_expense_messages_path(expense) %> </td>
+
            <%#= link_to "edit" , edit_expense_path(expense) %>
         </tr>
         </card>

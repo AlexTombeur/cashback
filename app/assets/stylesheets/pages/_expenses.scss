@@ -1,13 +1,7 @@
-.big-button {
-  width: 100%;
-  text-align: center;
-  margin: 50px;
-  display: inline;
-}
 
 .expense_sub_category {
   label:not(.control-label) {
-    width: 100%;
+    width: 700px;
     height: 2em;
     background-color: #2183A3;
     text-align: center;
@@ -27,6 +21,10 @@
   width: 400px;
   margin: 0 auto;
 }
+.form-category-icon {
+  display: block;
+}
+
 .edit-expense-form {
   width: 400px;
   margin: 0 auto;
@@ -38,6 +36,7 @@
     background-color: #15566B;
     text-align: center;
     border-radius: 4px;
+    max-width: 500px;
 }
 
 .sub-category-show {
@@ -46,8 +45,13 @@
     background-color: #2183A3;
     text-align: center;
     border-radius: 4px;
+    max-width: 500px;
 }
 
 .category-icon {
   padding: 40px;
+}
+
+.radio label{
+  padding-left: 0px !important;
 }
