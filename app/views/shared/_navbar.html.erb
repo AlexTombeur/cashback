@@ -10,10 +10,6 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <% if params[:controller] == "profile" && params[:action] == "show" %>
-        <%= link_to "Expenses Reporting", subordinates_expenses_path %>
-      <% end %>
-
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
