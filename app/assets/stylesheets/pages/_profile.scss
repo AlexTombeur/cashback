@@ -1,3 +1,17 @@
+.profile-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.expense-split {
+  margin-bottom: 1px;
+  padding: 5px;
+  font-size: 13px;
+}
+
 .profile-foto {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
 }

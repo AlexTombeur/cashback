@@ -23,3 +23,4 @@ private
     params.require(:user).permit(:email, :first_name, :last_name, :photo)
   end
 end
+

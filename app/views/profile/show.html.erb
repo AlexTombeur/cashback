@@ -2,44 +2,32 @@
   <div class="container">
   <div class="banner">
 
-    <div class="image">
-      <%# if @user.photo? %>
-      <%#= cl_image_tag @user.photo.path, width: 250, height: 250, crop: :fill, class: "profile-pic" %>
-      <%# end %>
+<%= link_to edit_profile_path do %>
+    <div class="profile-content" >
+      <h3> Hey <%= @user.first_name %> ! </h3>
+      <% if @user.photo? %>
+        <%= cl_image_tag @user.photo.path, width: 50, height: 50, crop: :fill , class: "profile-foto" %>
+      <% end %>
+    </div>
+<% end %>
+
+    <div class="info">
+      <ul>
+      <% if @user.manager %>
+        Reference manager: <%= @user.manager.first_name %> <%= @user.manager.last_name %>
+      <% end %>
+      <% if @user.top_manager? %>
+        You are top manager
+      <% elsif @user.is_manager? %>
+        You are manager
+      <% else %>
+        You are employee
+      <% end %>
+      </ul>
     </div>
 
-    <div class="content">
-      <div class="title">
-        <h2>
-          Hey <%= @user.first_name %> !
-        </h2>
-      </div>
 
-        <div class profile-foto >
-        <% if @user.photo? %>
-          <%= cl_image_tag @user.photo.path, width: 150, height: 150, crop: :fill %>
-        <% end %>
-        </div >
 
-      <div class="info">
-        <ul>
-        <%= @user.first_name %>
-        <%= @user.last_name %>
-        <%= @user.email %>
-        <% if @user.manager %>
-          Reference manager: <%= @user.manager.first_name %> <%= @user.manager.last_name %>
-        <% end %>
-        <%= link_to 'Edit profile', edit_profile_path, class: "edit" %>
-        <br>
-        <% if @user.top_manager? %>
-            You are a top manager
-        <% elsif @user.is_manager? %>
-          You are manager
-        <% end %>
-
-        </ul>
-      </div>
-    </div>
   </div>
 
    <div class="row">
@@ -51,7 +39,7 @@
       <% else %>
 
         <% @user.expenses.each do |expense| %>
-        <div class="well well-sm">
+        <div class="well well-sm expense-split">
         <tr>
           <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
            </p></td>
