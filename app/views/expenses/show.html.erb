@@ -1,10 +1,10 @@
 <div class="yield-box">
 <div class="container">
-<h3>Full description of the expense </h3>
+<h3 id="h3_show">Full description of the expense </h3>
 
-  <div class= " well table expense-show">
-<%= link_to edit_expense_path do %>
-   <ol>
+  <div class="well table expense-show" id="expense_show">
+    <%= link_to edit_expense_path do %>
+    <ol>
       <h4>Category</h4>
       <div  class="category-edit" >
       <i class="fa fa-<%= set_form_icon(@expense.category) %> fa-3x cat-icon"></i>
@@ -34,8 +34,11 @@
   </div>
 <% end %>
 
-<%#= link_to "Edit", edit_expense_path %>
+<div class="show-button">
+  <%= link_to "Back", profile_path, class: "back-btn btn-primary" %>
 
-<%= link_to "Back", profile_path %>
+  <%= link_to "Delete", expense_path(@expense), method: :delete, class: "delete-btn btn-danger" %>
+</div>
+
 </div>
 </div>
