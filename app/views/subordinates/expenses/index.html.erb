@@ -20,9 +20,36 @@
         <% end %>
     </table>
 
+
+
+<!-- 1 -->
+<% @user.expenses.each do |expense| %>
+
+  <!-- 2 -->
+  <%= link_to expense_path(expense) do %>
+
+  <!-- 3 -->
+  <div class="well well-sm expense-split">
+    <span class="label label-<%= expense.status %> pull-right">
+      <%= expense.status %>
+    </span>
+
+    <div class="row">
+      <div class="col-xs-7">
+        <h5 class="no-padding"><%= expense.date %></h5>
+        <p><%= expense.category %></p>
+      </div>
+      <div class="col-xs-5 text-right">
+        <h4><%= expense.amount %> €</h4>
+
+
+
+
+
     </div>
    </div>
 
      <%= render 'shared/action-sheet' %>
 
 </div>
+
