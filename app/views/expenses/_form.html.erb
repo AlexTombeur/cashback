@@ -2,57 +2,36 @@
   <div class="edit-expense-form">
 
     <% if params[:action] == "new" %>
-      <h4>Category</h4>
-        <div  class="category-edit" >
-          <i class="fa fa-<%= set_form_icon(@category) %> fa-2x cat-icon"></i>
-          <p> - </p>
-          <%= @category %>
-          <p> SHIT </p>
-        </div>
+      <div class="category-edit text-center">
+        <i class="fa fa-<%= @category %> fa-3x cat-icon"></i>
+      </div>
+      <!-- <h4>Category <%= @category %></h4> -->
     <% end %>
 
-      <% if params[:action] == 'edit' %>
+    <% if params[:action] == 'edit' %>
       <h4>Please update your expense !</h4>
-        <h4>Category</h4>
-          <div  class="category-edit" >
-          <i class="fa fa-<%= set_form_icon(@expense.category) %> fa-2x cat-icon"></i>
-          <p> - </p>
-          <%= @expense.category %>
-          </div>
-       <% end %>
+      <h4>Category</h4>
+        <div  class="category-edit" >
+        <i class="fa fa-<%= set_form_icon(@expense.category) %> fa-2x cat-icon"></i>
+        <%= @expense.category %>
+        </div>
+     <% end %>
 
-
-  <%= simple_form_for(@expense) do |f| %>
-  <%= f.hidden_field :category, value: @category %>
-  <%= f.hidden_field :status %>
+    <%= simple_form_for(@expense) do |f| %>
+      <%= f.hidden_field :category, value: @category %>
+      <%= f.hidden_field :status %>
 
       <% if @category != "other" %>
         <%= f.input :sub_category, collection: @sub_categories, as: :radio_buttons %>
       <% end %>
 
-    <%= f.input :amount %>
-    <%= f.input :date %>
-    <%#= f.input :status %>
-    <%= f.input :description %>
-    <%#= f.input :photo, as: :attachinary %>
-    <%= f.submit %>
-  <% end %>
+      <%= f.input :amount %>
+      <%= f.input :date %>
+      <%= f.input :description %>
+      <%= f.submit %>
+    <% end %>
 
-  <%= link_to "Back", profile_path %>
+    <%= link_to "Back", profile_path, class: 'btn btn-default' %>
 
   </div>
 </div>
-
-<!--   create_table "expenses", force: :cascade do |t|
-    t.integer  "amount"
-    t.date     "date"
-    t.string   "category"
-    t.string   "sub_category"
-    t.string   "status",       default: "Pending"
-    t.string   "title"
-    t.string   "description"
-    t.integer  "user_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.index ["user_id"], name: "index_expenses_on_user_id", using: :btree
-  end -->
