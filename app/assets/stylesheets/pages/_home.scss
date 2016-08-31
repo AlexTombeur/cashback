@@ -14,8 +14,8 @@ span {
 
 #title{
   margin:0;
-  padding-top:80px;
-  padding-bottom: 20px;
+  padding-top:40px;
+  padding-bottom: 40px;
   font-weight:bold;
   font-family:$header-font;
   letter-spacing: 1px;
@@ -73,7 +73,7 @@ span {
 }
 
 .white-el{
-  color: $gray-lighter;
+  color: #BBBBBB;
 }
 
 .wrapper-top {
@@ -86,7 +86,7 @@ span {
 }
 
 .value-proposition{
- font-size: 18px;
+ font-size: 16px;
  color: #9E9E9E;
  line-height: 31px;
  padding-top: 40px;
@@ -151,7 +151,7 @@ span {
 .punchline{
   padding-top: 35px;
   color: #9E9E9E;
-  font-size: 21px;
+  font-size: 19px;
 }
 
 .call-to-action{
