@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
 
-  before_action :find_expense, only: [:show, :edit, :update, :destroy, :approve, :reject, :request]
+  before_action :find_expense, only: [:show, :edit, :update, :destroy, :approve, :reject, :info]
 
   def index
     @expenses = current_user.expenses
@@ -61,7 +61,7 @@ def approve
      redirect_to profile_path
    end
 
-   def requested
+   def info
      @expense.status = "info"
      @expense.save
      redirect_to new_expense_message_path(@expense)
@@ -78,9 +78,6 @@ def approve
   end
 
   def set_sub_categories
-    # if @category == "other"
-    #   @sub_category = nil
-    # else
       case @category
       when "car" then ["fuel", "parking", "insurance", "repair", "maintenance", "cleaning"]
       when "hotel" then ["night", "day", "quicky"]
@@ -89,6 +86,5 @@ def approve
       when "phone" then ["local call", "international call"]
       when "other" then [""]
       end
-    # end
   end
 end
