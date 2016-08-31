@@ -22,6 +22,16 @@
           </div>
           <div class="col-xs-5 text-right">
             <h4><%= expense.amount %> €</h4>
+
+ <!-- TO DO !!!! -->
+        <div class="row">
+        <div class="col-xs-12">
+        <p><%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch %>
+        <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch %>
+        <%= link_to "info", info_subordinates_expense_path(expense), method: :patch %></p>
+          </div>
+        </div>
+
           </div>
         </div>
 
