@@ -34,11 +34,19 @@
   </div>
 <% end %>
 
-<div class="show-button">
-  <%= link_to "Back", profile_path, class: "back-btn btn-primary" %>
-
-  <%= link_to "Delete", expense_path(@expense), method: :delete, class: "delete-btn btn-danger" %>
+<div class="action-sheet">
+  <div class="row">
+    <div class="col-xs-6">
+      <%= link_to "Back", profile_path, class: "btn back-btn btn-primary" %>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to "Delete", expense_path(@expense), method: :delete, class: "btn delete-btn btn-danger" %>
+    </div>
+  </div>
 </div>
+
+
+
 
 </div>
 </div>
