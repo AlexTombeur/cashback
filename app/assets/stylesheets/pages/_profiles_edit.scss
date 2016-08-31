@@ -1,5 +1,16 @@
 .back-btnn {
     padding: 11px;
-    border-radius: 5px;
+    border-radius: 7px;
     margin-top: 12px;
 }
+
+.center-button {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+    flex-direction: column;
+    display: flex;
+}
+
+
