@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :invite_for => 2.weeks
 
   has_many :subordinates, class_name: "User",
-                          foreign_key: "manager_id"
+                          foreign_key: "manager_id", dependent: :destroy
   has_many :expenses
   has_many :messages
 
