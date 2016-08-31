@@ -1,55 +1,44 @@
 <div class="yield-box container">
-<h3>Your employees reporting expenses</h3>
+<h4>Your employees reporting expenses</h4>
+ <div class="row">
+  <div class="col-xs-12 col-sm-8">
 
-   <div class="row">
-    <div class="col-xs-12 col-sm-8">
-
-    <table>
-        <% @expenses.each do |expense| %>
-        <card class="list_expenses">
-        <tr>
-          <td><p> <%= link_to expense_path(expense) do %> <%= expense.date %> - <%= expense.user.email %> - <%= expense.category %> - <%= expense.amount %> € - <%= expense.status %> <% end %>
-            <%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch %>
-            <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch %>
-            <%= link_to "info", info_subordinates_expense_path(expense), method: :patch %>
-            </p></td>
-
-           <%#= link_to "edit" , edit_expense_path(expense) %>
-        </tr>
-        </card>
-        <% end %>
-    </table>
-
-
-
-<!-- 1 -->
-<% @user.expenses.each do |expense| %>
+  <!-- 1 -->
+  <% @expenses.each do |expense| %>
 
   <!-- 2 -->
   <%= link_to expense_path(expense) do %>
 
   <!-- 3 -->
-  <div class="well well-sm expense-split">
-    <span class="label label-<%= expense.status %> pull-right">
-      <%= expense.status %>
-    </span>
+    <div class="well well-sm expense-split">
+      <span class="label label-<%= expense.status %> pull-right">
+        <%= expense.status %>
+      </span>
 
-    <div class="row">
-      <div class="col-xs-7">
-        <h5 class="no-padding"><%= expense.date %></h5>
-        <p><%= expense.category %></p>
-      </div>
-      <div class="col-xs-5 text-right">
-        <h4><%= expense.amount %> €</h4>
+        <div class="row">
+          <div class="col-xs-7">
+            <h5 class="no-padding"><%= expense.date %></h5>
+            <p><%= expense.user.email %> <%= expense.category %></p>
+          </div>
+          <div class="col-xs-5 text-right">
+            <h4><%= expense.amount %> €</h4>
 
+ <!-- TO DO !!!! -->
+        <div class="row">
+        <div class="col-xs-12">
+        <p><%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch %>
+        <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch %>
+        <%= link_to "info", info_subordinates_expense_path(expense), method: :patch %></p>
+          </div>
+        </div>
 
+          </div>
+        </div>
 
-
-
+        <%= render 'shared/action-sheet' %>
     </div>
-   </div>
-
-     <%= render 'shared/action-sheet' %>
-
+    <% end %>
+    <% end %>
+  </div>
+ </div>
 </div>
-
