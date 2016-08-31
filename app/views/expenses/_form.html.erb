@@ -1,12 +1,15 @@
 <div class="container">
   <div class="edit-expense-form">
+  <% if params[:action] == "new" %>
+   <i class="fa fa-<%= set_form_icon(@category) %> fa-3x cat-icon"></i>
+  <% end %>
 
       <%= simple_form_for(@expense) do |f| %>
         <%= f.hidden_field :category, value: @category %>
         <%= f.hidden_field :status %>
         <% if params[:action] == 'edit' %>
         <h3>Please update your expense !</h3>
-
+         <i class="fa fa-<%= set_form_icon(@category) %> fa-3x cat-icon"></i>
         <%#= f.input :category, collection: %w(car travel food hotel other) %>
         <%#= f.input :sub_category, collection: @sub_categories %>
         <% end %>

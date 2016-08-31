@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       member do
         patch :accept
         patch :reject
+        patch :info
       end
 
       resources :messages, only: [:create]

@@ -24,7 +24,8 @@ class Subordinates::ExpensesController < ApplicationController
     redirect_to subordinates_expenses_path
   end
 
-  def requeste
+# TO DO !!!
+  def info
     @expense = Expense.find(params[:id])
     @expense.status = "info"
     @expense.save!
