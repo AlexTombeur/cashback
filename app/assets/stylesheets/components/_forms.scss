@@ -22,3 +22,8 @@ form#edit_user_1 {
 input[type="submit"] {
 
 }
+
+form#new_expense input[type=submit] {
+  @extend .btn;
+  @extend .btn-success;
+}
