@@ -4,12 +4,12 @@
     <div class="col-xs-6">
       <% if (params[:controller] == "profile" && params[:action] == "show") || params[:controller] == "subordinates/expenses"%>
       <% if current_user.is_manager || current_user.top_manager %>
-        <%= link_to "Reporting", subordinates_expenses_path, class: "btn btn-default button-transform" %>
+        <%= link_to "Reporting", subordinates_expenses_path, class: "btn btn-default btn-lg button-transform" %>
       <% end %>
       <% end %>
     </div>
     <div class="col-xs-6">
-      <%= link_to 'Add', new_expense_path, class: "btn btn-success button-transform"%>
+      <%= link_to 'Add', new_expense_path, class: "btn btn-success btn-lg button-transform"%>
     </div>
   </div>
 </div>

@@ -33,7 +33,7 @@
           <h4><%= "You have no expense yet... Don't forget to book them !" %></h4>
       <% else %>
 
-        <% @user.expenses.each do |expense| %>
+        <% @user.expenses.order("status").each do |expense| %>
 
           <%= link_to expense_path(expense) do %>
             <div class="well well-sm expense-split button-transform">
@@ -43,7 +43,7 @@
 
               <div class="row">
                 <div class="col-xs-7">
-                  <h5 class="no-padding"><%= expense.date %></h5>
+                  <h5><%= expense.date %></h5>
                   <p><%= expense.category %></p>
                 </div>
                 <div class="col-xs-5 text-right">
