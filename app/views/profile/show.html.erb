@@ -39,7 +39,7 @@
         <% @user.expenses.each do |expense| %>
 
           <%= link_to expense_path(expense) do %>
-            <div class="well well-sm expense-split">
+            <div class="well well-sm expense-split button-transform">
               <span class="label label-<%= expense.status %> pull-right">
                 <%= expense.status %>
               </span>
