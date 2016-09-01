@@ -30,10 +30,10 @@
       <%= f.input :date %>
       <%= f.input :description %>
       <% params[:action] == "new" ? button = "Create Expense" : button = "Update Expense" %>
-      <%= f.submit button, class: "btn btn-success wide-button" %>
+      <%= f.submit button, class: "btn btn-success btn-lg btn-block" %>
     </div>
     <% end %>
-
-    <%= link_to "Back", profile_path, class: 'btn btn-primary wide-button' %>
+    <hr>
+    <%= link_to "Back", profile_path, class: 'btn btn-primary btn-lg btn-block' %>
   </div>
 </div>

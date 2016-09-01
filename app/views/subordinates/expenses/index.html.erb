@@ -17,21 +17,27 @@
 
         <div class="row">
           <div class="col-xs-7">
-            <h5 class="no-padding"><%= expense.date %></h5>
-            <p><%= expense.user.email %> <%= expense.category %></p>
+            <h5><%= expense.date %></h5>
+            <p>
+              <%= expense.user.email %><br>
+              <%= expense.category %>
+            </p>
+
           </div>
           <div class="col-xs-5 text-right">
             <h4><%= expense.amount %> €</h4>
-
- <!-- TO DO !!!! -->
-        <div class="row">
-        <div class="col-xs-12">
-        <p><%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch %>
-        <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch %>
-        <%= link_to "info", info_subordinates_expense_path(expense), method: :patch %></p>
           </div>
         </div>
-
+        <hr>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block' %>
+          </div>
+          <div class="col-xs-4">
+            <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block' %>
+          </div>
+          <div class="col-xs-4">
+            <%= link_to "info", info_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block' %>
           </div>
         </div>
 
