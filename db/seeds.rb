@@ -24,13 +24,13 @@ man = User.create(
 empl = User.create(
   email: "alex@wagon.com",
   password: "azerty",
-  first_name: "Alex",
-  last_name: "Terrieur",
+  first_name: "Alexandre",
+  last_name: "Tombeur",
   is_manager: false,
   top_manager: false,
   manager_id: man.id,
   corporation_id: lewagon.id,
-  photo: File.open(File.join(Rails.root, 'app/assets/images/logo.png')),
+  photo: File.open(File.join(Rails.root, 'app/assets/images/Alex.jpg')),
   )
 empl2 = User.create(
   email: "annecollet@wagon.com",
@@ -62,7 +62,7 @@ expense_a = Expense.create(
   sub_category: "parking",
   status: "pending",
   title: nil,
-  description: "",
+  description: "Parking Avenue Louise",
   user: empl
   )
 expense_b = Expense.create(
@@ -70,9 +70,9 @@ expense_b = Expense.create(
   category: "food",
   amount: 36,
   sub_category: "lunch",
-  status: "pending",
+  status: "info",
   title: nil,
-  description: "",
+  description: "Business Lunch @Makisu",
   user: empl
   )
 expense_c = Expense.create(
@@ -82,37 +82,40 @@ expense_c = Expense.create(
   sub_category: "fuel",
   status: "pending",
   title: nil,
-  description: "",
+  description: "Full tank @Esso Ixelles",
   user: empl
   )
-expense_c = Expense.create(
-  date: "Mon, 29 Aug 2016",
-  category: "car",
-  amount: 9880,
-  sub_category: "insurance",
-  status: "info",
-  title: nil,
-  description: "",
-  user: empl
-  )
+
 expense_d = Expense.create(
   date: "Mon, 29 Aug 2016",
-  category: "food",
+  category: "phone",
   amount: 8,
-  sub_category: "breakfeast",
+  sub_category: "Local call",
   status: "rejected",
   title: nil,
-  description: "",
+  description: "Business Call Nike",
   user: empl
   )
+
+expense_c = Expense.create(
+  date: "Mon, 29 Aug 2016",
+  category: "food",
+  amount: 12988,
+  sub_category: "dinner",
+  status: "pending",
+  title: nil,
+  description: "Champagne Shower @Pacha",
+  user: empl
+  )
+
 expense_e = Expense.create(
   date: "Mon, 29 Aug 2016",
-  category: "car",
-  amount: 15,
-  sub_category: "parking",
+  category: "travel",
+  amount: 236,
+  sub_category: "flight",
   status: "valid",
   title: nil,
-  description: "",
+  description: "Flight to London",
   user: empl
   )
 expense_f = Expense.create(
@@ -122,17 +125,17 @@ expense_f = Expense.create(
   sub_category: "parking",
   status: "valid",
   title: nil,
-  description: "",
+  description: "Parking Place Flagey",
   user: empl
   )
 expense_g = Expense.create(
   date: "Mon, 31 Aug 2016",
-  category: "car",
-  amount: 15,
-  sub_category: "parking",
+  category: "hotel",
+  amount: 155,
+  sub_category: "night",
   status: "valid",
   title: nil,
-  description: "",
+  description: "Night @Hilton",
   user: empl
   )
 
