@@ -10,6 +10,10 @@
   <% end %>
 
   <!-- [...] all the fields -->
+  <% if @user.manager %>
+     Reference manager: <%= @user.manager.first_name %> <%= @user.manager.last_name %>
+  <% end %>
+
   <%= f.text_field :first_name , placeholder: "first_name" %>
   <%= f.text_field :last_name , placeholder: "last_name" %>
   <%= f.text_field :email , placeholder: "email" %>

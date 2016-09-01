@@ -7,9 +7,6 @@
           <h3> Hey <%= @user.first_name %> !</h3>
         <% end %>
         <p>
-          <% if @user.manager %>
-            Reference manager: <%= @user.manager.first_name %> <%= @user.manager.last_name %>
-          <% end %>
           <% if @user.top_manager? %>
             Top manager
           <% elsif @user.is_manager? %>
