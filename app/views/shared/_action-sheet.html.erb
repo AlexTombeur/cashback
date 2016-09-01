@@ -8,7 +8,11 @@
       <% end %>
       <% end %>
     </div>
-    <div class="col-xs-6">
+    <% if current_user.is_manager || current_user.top_manager %>
+      <div class="col-xs-6">
+    <% else %>
+      <div class="col-xs-12">
+    <% end %>
       <%= link_to 'Add', new_expense_path, class: "btn btn-success btn-lg button-transform"%>
     </div>
   </div>
