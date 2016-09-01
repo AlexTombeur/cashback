@@ -141,9 +141,8 @@ expense_g = Expense.create(
 
 
 
-
 expense_a_man = Expense.create(
-  date: "Mon, 29 Aug 2016",
+  date: "Mon, 28 Aug 2016",
   category: "car",
   amount: 15,
   sub_category: "parking",
@@ -152,42 +151,72 @@ expense_a_man = Expense.create(
   description: "",
   user: man
   )
-expense_b_man = Expense.create(
+expense_a_man = Expense.create(
+  date: "Mon, 28 Aug 2016",
+  category: "travel",
+  amount: 955,
+  sub_category: "flight",
+  status: "valid",
+  title: nil,
+  description: "Flight to NYC with Goldman Sachs",
+  user: man
+  )
+expense_a_man = Expense.create(
   date: "Mon, 29 Aug 2016",
-  category: "food",
-  amount: 36,
-  sub_category: "lunch",
+  category: "phone",
+  amount: 15,
+  sub_category: "international call",
   status: "valid",
   title: nil,
   description: "",
   user: man
   )
+expense_a_man = Expense.create(
+  date: "Mon, 30 Aug 2016",
+  category: "other",
+  amount: 340,
+  sub_category: "",
+  status: "valid",
+  title: nil,
+  description: "Special furniture for the office",
+  user: man
+  )
+expense_b_man = Expense.create(
+  date: "Mon, 30 Aug 2016",
+  category: "food",
+  amount: 64,
+  sub_category: "lunch",
+  status: "valid",
+  title: nil,
+  description: "Business lunch with Barclays",
+  user: man
+  )
 expense_c_man = Expense.create(
-  date: "Mon, 29 Aug 2016",
+  date: "Mon, 30 Aug 2016",
   category: "car",
   amount: 47,
   sub_category: "fuel",
   status: "valid",
   title: nil,
-  description: "",
+  description: "Way and return to Luxembourg",
   user: man
   )
 expense_c_man = Expense.create(
-  date: "Mon, 29 Aug 2016",
+  date: "Mon, 23 Aug 2016",
   category: "car",
-  amount: 9880,
+  amount: 2220,
   sub_category: "insurance",
-  status: "info",
+  status: "pending",
   title: nil,
   description: "",
   user: man
   )
 expense_d_man = Expense.create(
   date: "Mon, 29 Aug 2016",
-  category: "food",
+  category: "hotel",
   amount: 8,
-  sub_category: "breakfeast",
-  status: "rejected",
+  sub_category: "night",
+  status: "valid",
   title: nil,
   description: "",
   user: man
@@ -205,7 +234,7 @@ expense_e_man = Expense.create(
 expense_f_man = Expense.create(
   date: "Mon, 30 Aug 2016",
   category: "car",
-  amount: 15,
+  amount: 8,
   sub_category: "parking",
   status: "valid",
   title: nil,
@@ -215,7 +244,7 @@ expense_f_man = Expense.create(
 expense_g_man = Expense.create(
   date: "Mon, 31 Aug 2016",
   category: "car",
-  amount: 15,
+  amount: 3,
   sub_category: "parking",
   status: "valid",
   title: nil,

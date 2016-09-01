@@ -18,3 +18,16 @@
   </div>
 </div>
 <% end %>
+
+
+<%= content_for(:after_js) do %>
+ <script>
+   $('.button-transform').bind('touchstart', function() {
+         $(this).addClass('hover_effect');
+   });
+
+   $('.button-transform').bind('touchend', function() {
+           $(this).removeClass('hover_effect');
+   });
+ </script>
+<% end %>

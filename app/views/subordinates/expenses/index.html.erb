@@ -14,7 +14,7 @@
         <%= expense.status %>
       </span>
 
-        <div class="row">
+        <div class="row button-transform">
           <div class="col-xs-7">
             <h5><%= expense.date %></h5>
             <p>
@@ -30,13 +30,13 @@
         <hr>
         <div class="row">
           <div class="col-xs-4">
-            <%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block' %>
+            <%= link_to "validate", accept_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block button-transform' %>
           </div>
           <div class="col-xs-4">
-            <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block' %>
+            <%= link_to "reject", reject_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block button-transform' %>
           </div>
           <div class="col-xs-4">
-            <%= link_to "info", info_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block' %>
+            <%= link_to "info", info_subordinates_expense_path(expense), method: :patch, class: 'btn btn-default btn-sm btn-block button-transform' %>
           </div>
         </div>
 
@@ -47,3 +47,15 @@
   </div>
  </div>
 </div>
+
+<%= content_for(:after_js) do %>
+ <script>
+   $('.button-transform').bind('touchstart', function() {
+         $(this).addClass('hover_effect');
+   });
+
+   $('.button-transform').bind('touchend', function() {
+           $(this).removeClass('hover_effect');
+   });
+ </script>
+<% end %>

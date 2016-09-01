@@ -16,16 +16,21 @@
  }
 }
 
-// .button-transform {
-//   transition: transform 100ms ease-in-out;
-//   transform: scale(1);
-//   &:hover,
-//   &:focus,
-//   &:active {
+.button-transform {
+  transition: transform 100ms ease-in-out;
+  transform: scale(1);
+  //&:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.2);
+  }
+}
+
+
+.hover_effect {
+ color: #469AE0;
+}
+
+// .button-transform:hover, .button-transform:active{
 //     transform: scale(2);
 //   }
-// }
-
-.button-transform:hover, .button-transform:active{
-    transform: scale(2);
-  }
