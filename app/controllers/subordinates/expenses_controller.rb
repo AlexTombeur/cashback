@@ -5,6 +5,7 @@ class Subordinates::ExpensesController < ApplicationController
           @expenses << subordinate.expenses
           end
         @expenses.flatten!
+        @expenses.sort_by! { |x| [x.status, x.date] }
   end
 
   def show
