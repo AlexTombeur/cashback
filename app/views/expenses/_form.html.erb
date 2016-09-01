@@ -2,36 +2,38 @@
   <div class="edit-expense-form">
 
     <% if params[:action] == "new" %>
-      <div class="category-edit text-center">
-        <i class="fa fa-<%= @category %> fa-3x cat-icon"></i>
-      </div>
-      <!-- <h4>Category <%= @category %></h4> -->
+    <div class="category-edit text-center">
+      <i class="fa fa-<%= @category %> fa-3x cat-icon"></i>
+    </div>
+    <!-- <h4>Category <%= @category %></h4> -->
     <% end %>
 
     <% if params[:action] == 'edit' %>
-      <h4>Please update your expense !</h4>
-      <h4>Category</h4>
-        <div  class="category-edit" >
-        <i class="fa fa-<%= set_form_icon(@expense.category) %> fa-2x cat-icon"></i>
-        <%= @expense.category %>
-        </div>
-     <% end %>
+    <h4>Update your expense !</h4>
+    <h4>Category</h4>
+    <div  class="category-edit" >
+      <i class="fa fa-<%= set_form_icon(@expense.category) %> fa-2x cat-icon"></i>
+      <%= @expense.category %>
+    </div>
+    <% end %>
 
-    <%= simple_form_for(@expense) do |f| %>
+    <%= simple_form_for @expense do |f| %>
+    <div id="<%= @category %>">
       <%= f.hidden_field :category, value: @category %>
       <%= f.hidden_field :status %>
 
       <% if @category != "other" %>
-        <%= f.input :sub_category, collection: @sub_categories, as: :radio_buttons %>
+      <%= f.input :sub_category, collection: @sub_categories, as: :radio_buttons %>
       <% end %>
 
       <%= f.input :amount %>
       <%= f.input :date %>
       <%= f.input :description %>
-      <%= f.submit %>
+      <% params[:action] == "new" ? button = "Create Expense" : button = "Update Expense" %>
+      <%= f.submit button, class: "btn btn-success wide-button" %>
+    </div>
     <% end %>
 
-    <%= link_to "Back", profile_path, class: 'btn btn-default' %>
-
+    <%= link_to "Back", profile_path, class: 'btn btn-primary wide-button' %>
   </div>
 </div>
