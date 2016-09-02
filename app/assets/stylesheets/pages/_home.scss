@@ -159,3 +159,22 @@ span {
   padding-bottom: 58px;
 }
 
+
+
+.video-container {
+  .body-text {
+    position: relative;
+    z-index: 10;
+  }
+
+  .poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -10px;
+    right: 0;
+    background-position: center bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
